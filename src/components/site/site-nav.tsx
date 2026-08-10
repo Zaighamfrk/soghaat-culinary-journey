@@ -10,6 +10,7 @@ const LINKS = [
   { label: "Menu", to: "/menu", hash: undefined },
   { label: "Gallery", to: "/", hash: "gallery" },
   { label: "Find Us", to: "/", hash: "find-us" },
+  { label: "Reserve", to: "/", hash: "reserve" },
   { label: "Contact", to: "/", hash: "contact" },
 ] as const;
 

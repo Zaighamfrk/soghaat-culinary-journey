@@ -5,6 +5,7 @@ import { Hero } from "@/components/site/hero";
 import { SignatureDishes } from "@/components/site/signature-dishes";
 import { GallerySection } from "@/components/site/gallery-section";
 import { FindUs } from "@/components/site/find-us";
+import { Reservation } from "@/components/site/reservation";
 import {
   ContactCta,
   Experience,
@@ -69,6 +70,7 @@ function Home() {
         <Experience />
         <FindUs />
         <FromOurKitchen />
+        <Reservation />
         <ContactCta />
       </main>
       <SiteFooter />

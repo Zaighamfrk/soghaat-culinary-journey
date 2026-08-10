@@ -83,3 +83,129 @@ export const MENU_CATEGORIES = [
   "Drinks",
   "Desserts",
 ] as const;
+
+export type MenuCategory = (typeof MENU_CATEGORIES)[number];
+
+export type MenuItem = {
+  id: string;
+  name: string;
+  category: MenuCategory;
+  description: string;
+  price: number;
+  veg?: boolean;
+  signature?: boolean;
+  image?: string;
+};
+
+/**
+ * SAMPLE MENU — dish names are common Pakistani dishes and the prices below are
+ * placeholders (PKR) that have NOT been confirmed with the restaurant.
+ */
+export const MENU_ITEMS: MenuItem[] = [
+  {
+    id: "chicken-karahi",
+    name: "Chicken Karahi",
+    category: "Karahi",
+    description: "Wok-cooked chicken with tomato, ginger and green chilli.",
+    price: 1800,
+    signature: true,
+    image: karahi,
+  },
+  {
+    id: "mutton-karahi",
+    name: "Mutton Karahi",
+    category: "Karahi",
+    description: "Slow-cooked mutton in a peppery tomato masala.",
+    price: 2800,
+    image: karahi,
+  },
+  {
+    id: "seekh-kebab",
+    name: "Seekh Kebab",
+    category: "BBQ & Grills",
+    description: "Charcoal-grilled minced beef skewers with fresh herbs.",
+    price: 650,
+    signature: true,
+    image: bbq,
+  },
+  {
+    id: "chicken-tikka",
+    name: "Chicken Tikka",
+    category: "BBQ & Grills",
+    description: "Marinated bone-in chicken grilled over coals.",
+    price: 550,
+    image: bbq,
+  },
+  {
+    id: "chicken-biryani",
+    name: "Chicken Biryani",
+    category: "Rice",
+    description: "Layered basmati rice with spiced chicken and saffron.",
+    price: 750,
+    signature: true,
+    image: biryani,
+  },
+  {
+    id: "daal-mash",
+    name: "Daal Mash",
+    category: "Desi & Handi",
+    description: "White lentils tempered with cumin, garlic and ginger.",
+    price: 600,
+    veg: true,
+    image: heroFeast,
+  },
+  {
+    id: "chicken-handi",
+    name: "Chicken Handi",
+    category: "Desi & Handi",
+    description: "Creamy slow-cooked chicken in a clay handi.",
+    price: 1600,
+    image: heroFeast,
+  },
+  {
+    id: "pakora-platter",
+    name: "Pakora Platter",
+    category: "Starters",
+    description: "Gram-flour fritters with mint chutney.",
+    price: 350,
+    veg: true,
+    image: story,
+  },
+  {
+    id: "kashmiri-chai",
+    name: "Kashmiri Chai",
+    category: "Drinks",
+    description: "Pink tea finished with pistachio and almond.",
+    price: 300,
+    veg: true,
+    image: story,
+  },
+  {
+    id: "gulab-jamun",
+    name: "Gulab Jamun",
+    category: "Desserts",
+    description: "Warm milk dumplings in cardamom syrup (2 pcs).",
+    price: 250,
+    veg: true,
+    image: story,
+  },
+];
+
+export const CURRENCY = "PKR";
+
+export const formatPrice = (value: number) =>
+  `${CURRENCY} ${value.toLocaleString("en-PK")}`;
+
+/** Verified by the owner: destinations for reservation & order requests. */
+export const CONTACT = {
+  whatsapp: "+92 305 7531602",
+  whatsappDigits: "923057531602",
+  email: "zaighamfk.69@gmail.com",
+} as const;
+
+export const whatsappUrl = (message: string) =>
+  `https://wa.me/${CONTACT.whatsappDigits}?text=${encodeURIComponent(message)}`;
+
+export const mailtoUrl = (subject: string, body: string) =>
+  `mailto:${CONTACT.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
