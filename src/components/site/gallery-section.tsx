@@ -103,8 +103,8 @@ export function GallerySection() {
             <ChevronLeft className="size-5" />
           </button>
           <img
-            src={GALLERY[index].src}
-            alt={GALLERY[index].alt}
+            src={GALLERY[index]?.src}
+            alt={GALLERY[index]?.alt ?? ""}
             onClick={(e) => e.stopPropagation()}
             className="max-h-[85vh] w-auto max-w-full rounded-xl object-contain"
           />
