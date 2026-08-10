@@ -70,6 +70,7 @@ function Home() {
         <Experience />
         <FindUs />
         <FromOurKitchen />
+        <Reservation />
         <ContactCta />
       </main>
       <SiteFooter />
