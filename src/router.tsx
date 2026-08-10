@@ -1,16 +1,20 @@
-import { QueryClient } from "@tanstack/react-query";
-import { createRouter } from "@tanstack/react-router";
-import { routeTree } from "./routeTree.gen";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Outlet, createRootRouteWithContext, useRouter, HeadContent, Scripts } from "@tanstack/react-router";
+import { useEffect, type ReactNode } from "react";
+import appCss from "../styles.css?url";
+import { reportLovableError } from "../lib/lovable-error-reporting";
+import { CartProvider } from "../context/CartContext"; // ADD THIS
 
-export const getRouter = () => {
-  const queryClient = new QueryClient();
+// ... keep everything else the same ...
 
-  const router = createRouter({
-    routeTree,
-    context: { queryClient },
-    scrollRestoration: true,
-    defaultPreloadStaleTime: 0,
-  });
+function RootComponent() {
+  const { queryClient } = Route.useRouteContext();
 
-  return router;
-};
+  return (
+    <QueryClientProvider client={queryClient}>
+      <CartProvider> {/* WRAP HERE */}
+        <Outlet />
+      </CartProvider>
+    </QueryClientProvider>
+  );
+}
