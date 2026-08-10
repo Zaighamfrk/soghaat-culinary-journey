@@ -60,7 +60,7 @@ export function SiteNav() {
             <li key={l.label}>
               <Link
                 to={l.to}
-                hash={l.hash}
+                {...(l.hash ? { hash: l.hash } : {})}
                 className="text-sm tracking-wide text-ink-foreground/80 transition-colors hover:text-gold"
                 activeOptions={{ exact: true }}
               >
@@ -102,7 +102,7 @@ export function SiteNav() {
             <li key={l.label} className="border-b border-gold/10 last:border-0">
               <Link
                 to={l.to}
-                hash={l.hash}
+                {...(l.hash ? { hash: l.hash } : {})}
                 onClick={() => setOpen(false)}
                 className="block py-4 font-display text-2xl text-ink-foreground"
               >
