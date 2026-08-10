@@ -81,28 +81,28 @@ export function Reservation() {
                   Name
                 </label>
                 <input id="res-name" name="name" maxLength={80} className={field} placeholder="Your name" />
-                {errors.name && <p className="mt-1 text-xs text-destructive">{errors.name}</p>}
+                {errors["name"] && <p className="mt-1 text-xs text-destructive">{errors["name"]}</p>}
               </div>
               <div>
                 <label className={label} htmlFor="res-phone">
                   Contact number
                 </label>
                 <input id="res-phone" name="phone" maxLength={30} className={field} placeholder="+92 ..." />
-                {errors.phone && <p className="mt-1 text-xs text-destructive">{errors.phone}</p>}
+                {errors["phone"] && <p className="mt-1 text-xs text-destructive">{errors["phone"]}</p>}
               </div>
               <div>
                 <label className={label} htmlFor="res-date">
                   Preferred date
                 </label>
                 <input id="res-date" name="date" type="date" className={field} />
-                {errors.date && <p className="mt-1 text-xs text-destructive">{errors.date}</p>}
+                {errors["date"] && <p className="mt-1 text-xs text-destructive">{errors["date"]}</p>}
               </div>
               <div>
                 <label className={label} htmlFor="res-time">
                   Preferred time
                 </label>
                 <input id="res-time" name="time" type="time" className={field} />
-                {errors.time && <p className="mt-1 text-xs text-destructive">{errors.time}</p>}
+                {errors["time"] && <p className="mt-1 text-xs text-destructive">{errors["time"]}</p>}
               </div>
               <div>
                 <label className={label} htmlFor="res-guests">
@@ -117,7 +117,7 @@ export function Reservation() {
                   defaultValue={2}
                   className={field}
                 />
-                {errors.guests && <p className="mt-1 text-xs text-destructive">{errors.guests}</p>}
+                {errors["guests"] && <p className="mt-1 text-xs text-destructive">{errors["guests"]}</p>}
               </div>
               <div className="sm:col-span-2">
                 <label className={label} htmlFor="res-notes">
